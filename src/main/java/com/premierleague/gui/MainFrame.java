@@ -188,13 +188,14 @@ public class MainFrame extends JFrame {
     dialog.setVisible(true);
 }
 
-    private void openEditMatchWindow() {
+   private void openEditMatchWindow() {
     logArea.append("Edit Match clicked.\n");
 
     JDialog dialog = new JDialog(this, "Edit Match", true);
     dialog.setLayout(new GridBagLayout());
     GridBagConstraints gbc = new GridBagConstraints();
-    gbc.insets = new Insets(5,5,5,5);
+    gbc.insets = new Insets(5, 5, 5, 5);
+    gbc.fill = GridBagConstraints.HORIZONTAL;
 
     // Step 1: Select team
     gbc.gridx = 0; gbc.gridy = 0;
@@ -205,60 +206,77 @@ public class MainFrame extends JFrame {
     gbc.gridx = 1;
     dialog.add(teamBox, gbc);
 
-    // Step 2: Select match for that team
+    // Step 2: Select match (initially empty)
     gbc.gridx = 0; gbc.gridy = 1;
     dialog.add(new JLabel("Select Match:"), gbc);
+
     JComboBox<Match> matchBox = new JComboBox<>();
     gbc.gridx = 1;
     dialog.add(matchBox, gbc);
 
-    // Update match dropdown when team changes
+    // Step 3: Load matches dynamically when team changes
     teamBox.addActionListener(e -> {
         Team selectedTeam = (Team) teamBox.getSelectedItem();
         if (selectedTeam != null) {
             try {
+                logArea.append("Loading matches for team: " + selectedTeam.getTeamName() + "\n");
+
                 List<Match> matches = matchDAO.lookupTeamMatches(selectedTeam.getTeamId());
                 matchBox.removeAllItems();
-                for (Match m : matches) {
-                    matchBox.addItem(m);
+
+                if (matches == null || matches.isEmpty()) {
+                    logArea.append("No matches found for " + selectedTeam.getTeamName() + "\n");
+                } else {
+                    for (Match m : matches) {
+                        matchBox.addItem(m);
+                    }
+                    logArea.append("Loaded " + matches.size() + " matches.\n");
                 }
+
             } catch (Exception ex) {
                 logArea.append("Error loading matches: " + ex.getMessage() + "\n");
             }
         }
     });
 
-    // Home score input
+    // Step 4: Input fields
     gbc.gridx = 0; gbc.gridy = 2;
     dialog.add(new JLabel("Home Score:"), gbc);
     JTextField homeScoreField = new JTextField(3);
     gbc.gridx = 1;
     dialog.add(homeScoreField, gbc);
 
-    // Away score input
     gbc.gridx = 0; gbc.gridy = 3;
     dialog.add(new JLabel("Away Score:"), gbc);
     JTextField awayScoreField = new JTextField(3);
     gbc.gridx = 1;
     dialog.add(awayScoreField, gbc);
 
-    // Update button
+    // Step 5: Update button
     gbc.gridx = 0; gbc.gridy = 4; gbc.gridwidth = 2;
     JButton updateBtn = new JButton("Update Match");
     dialog.add(updateBtn, gbc);
 
+    // Step 6: Handle update
     updateBtn.addActionListener(e -> {
         try {
             Match selectedMatch = (Match) matchBox.getSelectedItem();
-            if (selectedMatch == null) return;
+            if (selectedMatch == null || selectedMatch.getMatchId() == -1) {
+                JOptionPane.showMessageDialog(dialog, "Please select a valid match.");
+                return;
+            }
 
-            int homeScore = Integer.parseInt(homeScoreField.getText());
-            int awayScore = Integer.parseInt(awayScoreField.getText());
+            int homeScore = Integer.parseInt(homeScoreField.getText().trim());
+            int awayScore = Integer.parseInt(awayScoreField.getText().trim());
 
             matchDAO.editMatch(selectedMatch.getMatchId(), homeScore, awayScore);
             logArea.append("Edited match: " + selectedMatch + " -> " + homeScore + "-" + awayScore + "\n");
+
             refreshStandingsTable();
             dialog.dispose();
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(dialog, "Scores must be integers.");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(dialog, "Error: " + ex.getMessage());
         }
@@ -268,6 +286,7 @@ public class MainFrame extends JFrame {
     dialog.setLocationRelativeTo(this);
     dialog.setVisible(true);
 }
+
 
 
 

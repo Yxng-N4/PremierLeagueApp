@@ -3,5 +3,4 @@ com\premierleague\gui\MainFrame.class
 com\premierleague\dao\TeamDAO.class
 com\premierleague\dao\MatchDAO.class
 com\premierleague\Database.class
-com\premierleague\DatabaseConnectionTest.class
 com\premierleague\model\Team.class

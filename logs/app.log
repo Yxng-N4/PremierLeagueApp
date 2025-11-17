@@ -1,1 +1,111 @@
 2025-09-06 23:27:50 INFO : Connection successful!
+2025-11-11 10:37:27 ERROR: Failed to connect to SQL Server
+java.sql.SQLException: No suitable driver found for jdbc:sqlserver://YXNG\SQLEXPRESS;databaseName=premier_league_db;integratedSecurity=true;
+	at java.sql.DriverManager.getConnection(DriverManager.java:706) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:252) ~[java.sql:?]
+	at com.premierleague.Database.getConnection(Database.java:14) [classes/:?]
+	at com.premierleague.Database.main(Database.java:23) [classes/:?]
+2025-11-11 10:46:36 ERROR: Failed to connect to SQL Server
+com.microsoft.sqlserver.jdbc.SQLServerException: The server sqlexpress is not configured to listen with TCP/IP.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:250) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.getInstancePort(SQLServerConnection.java:8544) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.primaryPermissionCheck(SQLServerConnection.java:4113) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3796) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:252) ~[java.sql:?]
+	at com.premierleague.Database.getConnection(Database.java:14) [classes/:?]
+	at com.premierleague.Database.main(Database.java:23) [classes/:?]
+2025-11-11 10:50:41 ERROR: Failed to connect to SQL Server
+com.microsoft.sqlserver.jdbc.SQLServerException: The server sqlexpress is not configured to listen with TCP/IP.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:250) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.getInstancePort(SQLServerConnection.java:8544) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.primaryPermissionCheck(SQLServerConnection.java:4113) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3796) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:252) ~[java.sql:?]
+	at com.premierleague.Database.getConnection(Database.java:14) [classes/:?]
+	at com.premierleague.Database.main(Database.java:23) [classes/:?]
+2025-11-11 10:53:57 ERROR: Failed to connect to SQL Server
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host YXNG, port 1433 has failed. Error: "Connection refused: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:250) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:316) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2611) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:736) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4201) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:252) ~[java.sql:?]
+	at com.premierleague.Database.getConnection(Database.java:14) [classes/:?]
+	at com.premierleague.Database.main(Database.java:23) [classes/:?]
+2025-11-11 11:02:42 ERROR: Failed to connect to SQL Server
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host YXNG, port 1433 has failed. Error: "Connection refused: no further information. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:250) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:316) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2611) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:736) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4201) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:252) ~[java.sql:?]
+	at com.premierleague.Database.getConnection(Database.java:14) [classes/:?]
+	at com.premierleague.Database.main(Database.java:23) [classes/:?]
+2025-11-11 11:09:11 ERROR: Failed to connect to SQL Server
+com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user ''. ClientConnectionId:2fbb4243-e8bc-4ab0-af6d-7b6a75935bad
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:278) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:329) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:7423) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5921) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5853) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7825) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4828) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4261) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:252) ~[java.sql:?]
+	at com.premierleague.Database.getConnection(Database.java:14) [classes/:?]
+	at com.premierleague.Database.main(Database.java:23) [classes/:?]
+2025-11-11 12:02:54 ERROR: Failed to connect to SQL Server
+com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'user'. ClientConnectionId:1a58e8bf-f352-4d14-8583-24d299f0fc8f
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:278) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:329) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:7423) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5921) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5853) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7825) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4828) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4261) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371) ~[mssql-jdbc-13.2.1.jre11.jar:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:229) ~[java.sql:?]
+	at com.premierleague.Database.getConnection(Database.java:15) [classes/:?]
+	at com.premierleague.Database.main(Database.java:24) [classes/:?]
+2025-11-11 12:13:02 INFO : Connected to SQL Server successfully!
+2025-11-11 17:06:48 INFO : Connected to SQL Server successfully!
+2025-11-12 18:01:19 INFO : Connected to SQL Server successfully!
+2025-11-12 19:16:08 INFO : Connected to SQL Server successfully!
+2025-11-12 19:24:34 INFO : Connected to SQL Server successfully!
+2025-11-12 19:33:57 INFO : Connected to SQL Server successfully!
+2025-11-12 19:44:30 INFO : Connected to SQL Server successfully!
+2025-11-12 19:57:02 INFO : Connected to SQL Server successfully!

@@ -21,7 +21,7 @@ public class TeamDAO {
     // Fetch all teams for standings table
     public List<Team> lookupStandings() {
         List<Team> teams = new ArrayList<>();
-        String sql = "{CALL lookupStandings()}";  // stored procedure returning all teams from standings view
+        String sql = "{CALL LookupStandings()}";  // stored procedure returning all teams from standings view
         try (CallableStatement stmt = conn.prepareCall(sql)) {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {

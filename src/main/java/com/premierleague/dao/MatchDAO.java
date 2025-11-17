@@ -20,18 +20,19 @@ public class MatchDAO {
             stmt.setInt(1, teamId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                // Currently using IDs; can add team names later
                 matches.add(new Match(
-                        rs.getInt("match_id"),
-                        rs.getInt("home_team_id"),
-                        rs.getInt("away_team_id"),
-                        rs.getInt("home_score"),
-                        rs.getInt("away_score")
+                    rs.getInt("match_id"),
+                    rs.getString("home_team_name"),
+                    rs.getString("away_team_name"),
+                    rs.getInt("home_score"),
+                    rs.getInt("away_score"),
+                    rs.getString("match_description")
                 ));
             }
         }
         return matches;
     }
+
 
     // Add a Match
     public void addMatch(int homeTeamId, int awayTeamId, int homeScore, int awayScore) throws SQLException {
@@ -44,6 +45,7 @@ public class MatchDAO {
             stmt.executeUpdate();
         }
     }
+
 
     // Edit a match
     public void editMatch(int matchId, int homeScore, int awayScore) throws SQLException {
